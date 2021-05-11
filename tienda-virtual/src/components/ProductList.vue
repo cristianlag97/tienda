@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex align-self-stretch flex-wrap">
-    <product-card v-for="product in getProducts" :key="product.id" :product="product"/>
+    <product-card v-for="product in Products" :key="product.id" :product="product"/>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import { Component, Vue } from 'vue-property-decorator';
 })
 export default class ProductList extends Vue {
 
-  get getProducts(){
+  get Products(){
     return this.$store.state.products
   }
 
