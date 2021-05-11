@@ -16,10 +16,10 @@
       </v-card-text>
       <v-card-actions>
         <v-btn
-          color="deep-purple lighten-2"
+          @click="addToCart()"
           text
         >
-          Reserve
+          Añadir al carro
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -32,5 +32,13 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class ProductList extends Vue {
   @Prop() private product!:Object
+
+  //methods
+  addToCart(){
+    this.$store.dispatch('addProductToCart', {
+      product: this.product,
+      quantity: 1
+    })
+  }
 }
 </script>

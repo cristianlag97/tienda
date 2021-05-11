@@ -10,7 +10,7 @@ import * as actions from './actions';
 
 export default new Vuex.Store({
   state,
-  // getters,
+  getters,
   mutations,
   actions,
 })

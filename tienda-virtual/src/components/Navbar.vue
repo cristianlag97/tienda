@@ -3,8 +3,6 @@
     <v-toolbar dense dark>
       <v-toolbar-items>
         <v-btn to="/">Inicio</v-btn>
-
-        <v-btn>Product</v-btn>
       </v-toolbar-items>
 
       <v-spacer></v-spacer>
@@ -15,7 +13,7 @@
           :close-on-content-click="false"
         >
           <template v-slot:activator="{ on, attrs }">
-            <v-btn v-on="on" v-bind="attrs">0 Cart</v-btn>
+            <v-btn v-on="on" v-bind="attrs">{{ cartItemCount }} Cart</v-btn>
           </template>
           <MiniCart @click="$event.stopPropagation()"/>
         </v-menu>
@@ -31,7 +29,9 @@ import { Component, Vue } from 'vue-property-decorator';
     MiniCart
   }
 })
-export default class HelloWorld extends Vue {
-  
+export default class Navbar extends Vue {
+  get cartItemCount(){
+    return this.$store.getters.cartItemCount
+  }
 }
 </script>

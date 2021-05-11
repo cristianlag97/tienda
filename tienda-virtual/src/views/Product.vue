@@ -16,7 +16,7 @@
         outlined
         class="p-1"
       ></v-text-field>
-      <v-btn color="blue" dark>Añadir al carrito</v-btn>
+      <v-btn color="blue" dark @click="addToCart()">Añadir al carrito</v-btn>
 
       <p class="mt-4">{{ product.description }}</p>
     </v-col>
@@ -34,6 +34,13 @@ export default class Product extends Vue {
   
   mounted() {
     this.$store.dispatch('getProduct', this.id)
+  }
+
+  addToCart(){
+    this.$store.dispatch('addProductToCart', {
+      product: this.product,
+      quantity: 1
+    })
   }
 }
 </script>
