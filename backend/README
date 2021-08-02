@@ -1,1 +1,6 @@
-read this cocument
+read this cocument!!!!!!
+
+first: write in the console: pip install -r requirements.txt
+then write: python manage.py makemigrations 
+and finally write: python manage.py makemigrations. 
+For you can job with the project write: python manage.py runserver
